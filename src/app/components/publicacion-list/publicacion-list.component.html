@@ -1,0 +1,21 @@
+<ion-list *ngIf="publicaciones && publicaciones.length > 0; else noData">
+  <ion-item *ngFor="let pub of publicaciones">
+    <ion-thumbnail slot="start" *ngIf="pub.foto">
+      <ion-img [src]="pub.foto"></ion-img>
+    </ion-thumbnail>
+    <ion-label class="ion-text-wrap">
+      <h2>{{ pub.titulo }}</h2>
+      <p>{{ pub.descripcion }}</p>
+      <p><ion-text color="medium">{{ pub.fecha | fecha }}</ion-text></p>
+    </ion-label>
+    <ion-button fill="clear" color="danger" slot="end" (click)="deletePublicacion(pub)">
+      <ion-icon name="trash" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>
+
+<ng-template #noData>
+  <div class="ion-text-center ion-padding">
+    <p>No hay publicaciones para mostrar.</p>
+  </div>
+</ng-template>

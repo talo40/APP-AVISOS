@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Confirmar Eliminación</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelar()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <p>¿Estás seguro de que deseas eliminar la publicación "<strong>{{ tituloPub }}</strong>"?</p>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="block" color="medium" (click)="cancelar()">Cancelar</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" color="danger" (click)="confirmar()">Eliminar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
